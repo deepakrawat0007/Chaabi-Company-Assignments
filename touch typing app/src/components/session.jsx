@@ -52,7 +52,8 @@ const Session = () => {
 
 
   useEffect(() => {
-    dispatch(setWordTrack(typeWords.length))
+    const wordTrack = typeWords.split(" ")
+    dispatch(setWordTrack(wordTrack.length))
 
     for (let i = 0; i < typeWords.length; i++) { // checking if the typed word is correct or not
       if (typeWords[i] !== words[i]) {
@@ -67,8 +68,8 @@ const Session = () => {
     }
 
     if (typeWords.length === words.length && !isMistake) { // if all the words typed and still time remaining generating new words
-
-      dispatch(setWordTyped(typeWords.length))
+      const words = typeWords.split(" ")
+      dispatch(setWordTyped(words.length))
       GenerateWords()
       dispatch(setTypeWords(""))
     }
@@ -77,7 +78,11 @@ const Session = () => {
 
   return <>
     {popUp ? (<div className="popup"><Modal /></div>) : ""}
-    <div className="subHead"><div className="time"><Timer /></div> <div className="cancel"><button onClick={handleEnd}>End Session</button></div></div>
+    <div className="subHead"><div className="time"><Timer /></div>
+    <div className="level">Session Level: <p style={{margin:0 , padding:0}}>{level==="2" ? "Easy" : level === "3"? "Medium" :"Hard"}</p></div>
+    <div className="cancel"><button onClick={handleEnd}>End Session</button></div>
+    
+    </div>
     <div className="words">{words}</div>
     <div className="inp"><input style={{ borderColor: color }} value={typeWords} disabled={popUp ? true : false} spellCheck={false} className={isMistake ? "shake-animation" : "normal"} placeholder="Type the text showing above" onChange={(e) => dispatch(setTypeWords(e.target.value))} /></div>
   </>;

@@ -3,8 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 export const settingSlice = createSlice({
     name: "setting",
     initialState: {
-        time: 120,  //default value of session 2min
-        level: 2, // def value of levl of diff
+        time: null,  //default value of session 2min
+        level: null, // def value of levl of diff
         start:false, // for starting session
     },
     reducers: {

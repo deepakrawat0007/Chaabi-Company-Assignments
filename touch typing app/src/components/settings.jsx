@@ -1,10 +1,17 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { sessionTime, sessionLevel , startSession} from '../redux/reduxSlices'
 
 function Settings() {
+    const {time , level} = useSelector((state)=> state.setting)
     const dispatch = useDispatch()
-
+   const handleStart = ()=>{
+     if(!time || !level){
+        return alert("Please Select the Session types below first")
+     } else{
+        return dispatch(startSession(true))
+     }
+   }
     return (
         <>
 
@@ -32,7 +39,7 @@ function Settings() {
                     </select>
                 </div>
             </div>
-            <div className="btn"><button onClick={()=>dispatch(startSession(true))}>Start Session</button></div>
+            <div className="btn"><button onClick={handleStart}>Start Session</button></div>
         </>
     )
 }

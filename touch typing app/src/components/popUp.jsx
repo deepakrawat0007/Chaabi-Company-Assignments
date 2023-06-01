@@ -12,7 +12,7 @@ function Modal() {
 
   useEffect(() => {  // calculating accuracy on based of typing keys
     const acc = (((parseInt(wordsTyped) - parseInt(mistakes)) / parseInt(wordsTyped)) * 100).toFixed(2);
-    dispatch(setAccuracy(isNaN(acc) ? 0 : acc));
+    dispatch(setAccuracy(isNaN(acc) ? 0 : acc < 0 ? 0 : acc));
   }, [wordsTyped, mistakes]);
 
   useEffect(() => {      // calculating WPM on based of typing 
