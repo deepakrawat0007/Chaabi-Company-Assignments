@@ -1,0 +1,188 @@
+body{
+  margin: 0;
+  padding: 0;
+background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+font-family: 'Courier New', Courier, monospace;
+
+}
+
+.head{
+  border-bottom: 1px solid grey;
+  padding: 0 2% 0 2%;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+.head p{
+  font-size: 24px;
+  font-weight: 600;
+  color:  white;
+}
+
+/* SETTINGS */
+
+.setting {
+  padding: 5%;
+  column-gap: 5%;
+  display:  flex;
+  justify-content: center;
+}
+.setting div{
+  font-size: 36px;
+  font-weight: 700;
+  color: whitesmoke;
+  text-align: center;
+  width: 35vw;
+}
+
+.setting .sessionTiming label , .setting .diff label{
+  display: block;
+}
+
+.setting select{
+  border: 0;
+  background:  linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  font-weight: 600;
+  color: whitesmoke;
+  font-size: 20px;
+  padding: 3%;
+  margin: 2%;
+  border-radius: 20px;
+}
+.setting option{
+  background-color: #0f0c29;
+}
+
+.btn{
+text-align: center;
+}
+
+.btn button{
+  padding: 1% 2% 1% 2%;
+  font-size: 1.1em;
+  font-weight: 600;
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  border: 2px solid #0f0c29;
+border-radius: 20px;
+color:  whitesmoke;
+cursor: pointer;
+}
+.btn button:hover{
+  border: 5px solid #24243e;
+}
+
+.setting select:hover{
+  border: 5px solid #0f0c29;
+  cursor: pointer;
+}
+
+
+/* Session Css*/
+
+.words{
+  text-align: center;
+  margin: 2%;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+  font-size: 30px;
+  color: antiquewhite;
+  font-weight: 400;
+  background-color: rgba(0,0,0,0.5);
+  padding: 4%;
+  
+}
+.inp{
+  text-align: center;
+}
+.inp input{
+  border: 5px solid;
+  width: 90vw;
+  height: 15vh;
+  font-size: 24px;
+  outline-style: none;
+  border-radius: 20px;
+   background: rgba(0,0,0,0.5);
+  color: whitesmoke;
+  padding: 2%;
+  letter-spacing: 2px;
+}
+
+/*Animated box*/
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10% {
+    transform: translateX(-10px);
+  }
+  20% {
+    transform: translateX(10px);
+  }
+  30% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  60% {
+    transform: translateX(10px);
+  }
+  70% {
+    transform: translateX(-10px);
+  }
+  80% {
+    transform: translateX(10px);
+  }
+  90% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake-animation {
+  animation: shake 0.2s;
+}
+
+.subHead{
+  padding:0 2%;
+  display: flex;
+  align-items: center;
+}
+
+.subHead .time{
+  margin-right: auto;
+}
+
+.subHead .cancel button{
+  padding: 2%;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: red;
+  color: antiquewhite;
+  cursor: pointer;
+}
+
+.cancel button:hover{
+  background-color: crimson;
+}
+
+
+/* POP up css*/
+
+
+.popup{
+  position: fixed;
+  background-color: rgba(0,0,0,0.9);
+  color: white;
+  padding: 2%;
+  font-size: 24px;
+  width: 40vw;
+ text-align: center;
+  border-radius: 20px;
+ left: 25%;
+ top: 25%;
+}
